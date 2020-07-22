@@ -17,4 +17,17 @@ class StatsServiceTest {
         assertEquals(expected, actual);
     }
 
+    @org.junit.jupiter.api.Test
+    void statisticSaleAverageMonth(){
+        StatsService service = new StatsService();
+        // подготавливаем данные:
+        int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        // вызываем метод
+        int actual = (int) service.statisticSaleAverageMonth(sale);
+
+        // задаём контрольное значение
+        long expected = 15;
+        assertEquals(expected, actual);
+    }
 }
