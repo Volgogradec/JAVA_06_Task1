@@ -6,13 +6,13 @@ class StatsServiceTest {
     @org.junit.jupiter.api.Test
     void statisticSaleSum() {
         StatsService service = new StatsService();
-        // подготавливаем данные:
+        // Подготавливаем данные:
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        // вызываем метод
+        // Вызываем метод
         int actual = (int) service.statisticSaleSum(sale);
 
-        // задаём контрольное значение
+        // Задаём контрольное значение
         long expected = 180;
         assertEquals(expected, actual);
     }
@@ -20,14 +20,42 @@ class StatsServiceTest {
     @org.junit.jupiter.api.Test
     void statisticSaleAverageMonth(){
         StatsService service = new StatsService();
-        // подготавливаем данные:
+        // Подготавливаем данные:
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        // вызываем метод
+        // Вызываем метод
         int actual = (int) service.statisticSaleAverageMonth(sale);
 
-        // задаём контрольное значение
+        // Задаём контрольное значение
         long expected = 15;
+        assertEquals(expected, actual);
+    }
+
+    @org.junit.jupiter.api.Test
+    void statisticSaleMax(){
+        StatsService service = new StatsService();
+        // Подготавливаем данные:
+        int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        // Вызываем метод
+        int actual = (int) service.statisticSaleMax(sale);
+
+        // Задаём контрольное значение
+        long expected = 20;
+        assertEquals(expected, actual);
+    }
+
+    @org.junit.jupiter.api.Test
+    void statisticSaleMin(){
+        StatsService service = new StatsService();
+        // Подготавливаем данные:
+        int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        // Вызываем метод
+        int actual = (int) service.statisticSaleMin(sale);
+
+        // Задаём контрольное значение
+        long expected = 7;
         assertEquals(expected, actual);
     }
 }
