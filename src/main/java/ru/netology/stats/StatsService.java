@@ -14,7 +14,7 @@ public class StatsService {
 
     public long statisticSaleAverageMonth(int[] sale) {
         // Определяем количество элементов в массиве
-        int lenthSale = sale.length;
+        int numberSale = sale.length;
 
         // Начинаем суммировать с нуля
         long sum = 0;
@@ -24,7 +24,7 @@ public class StatsService {
             sum += purchase;
         }
 
-        long AverageMonth = sum / lenthSale;
+        long AverageMonth = sum / numberSale;
         return AverageMonth;
     }
 
@@ -61,4 +61,43 @@ public class StatsService {
         // Возвращаем минимальное значение
         return saleMin;
     }
+
+    public int statisticMonthUnderAverage(int[] sale) {
+        // Вычясиляем среднее значение
+        int averageSum = (int) statisticSaleAverageMonth(sale);
+
+        // Задаём переменную-счётчик
+        int numberUnderAverage = 0;
+
+        // Запускаем цикл от 0 до длины массива sale
+        for (int i = 0; i < sale.length; i++) {
+            // если значение из массива меньше среднего, то увеличиваем счётчик numberUnderAverage на 1
+            if (sale[i] < averageSum) {
+                numberUnderAverage = numberUnderAverage + 1;
+            }
+        }
+
+        // Возвращаем значение счётчика
+        return numberUnderAverage;
+    }
+
+    public int statisticMonthOverAverage(int[] sale) {
+        // Вычясиляем среднее значение
+        int averageSum = (int) statisticSaleAverageMonth(sale);
+
+        // Задаём переменную-счётчик
+        int numberOverAverage = 0;
+
+        // Запускаем цикл от 0 до длины массива sale
+        for (int i = 0; i < sale.length; i++) {
+            // если значение из массива больше среднего, то увеличиваем счётчик numberUnderAverage на 1
+            if (sale[i] > averageSum) {
+                numberOverAverage = numberOverAverage + 1;
+            }
+        }
+
+        // Возвращаем значение счётчика
+        return numberOverAverage;
+    }
+
 }

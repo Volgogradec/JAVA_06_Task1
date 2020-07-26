@@ -58,4 +58,30 @@ class StatsServiceTest {
         long expected = 7;
         assertEquals(expected, actual);
     }
+    @org.junit.jupiter.api.Test
+    void statisticMonthUnderAverage(){
+        StatsService service = new StatsService();
+        // Подготавливаем данные:
+        int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        // Вызываем метод
+        int actual = (int) service.statisticMonthUnderAverage(sale);
+
+        // Задаём контрольное значение
+        long expected = 5;
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void statisticMonthOverAverage(){
+        StatsService service = new StatsService();
+        // Подготавливаем данные:
+        int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        // Вызываем метод
+        int actual = (int) service.statisticMonthOverAverage(sale);
+
+        // Задаём контрольное значение
+        long expected = 5;
+        assertEquals(expected, actual);
+    }
 }
