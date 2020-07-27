@@ -9,14 +9,14 @@ public class StatsService {
         return sum;
     }
 
-    public long statisticSaleAverageMonth(int[] sale) {
+    public double statisticSaleAverageMonth(int[] sale) {
         int numberSale = sale.length;
         long sum = 0;
         for (long purchase : sale) {
             sum += purchase;
         }
 
-        long averageMonth = sum / numberSale;
+        double averageMonth = sum / numberSale;
         return averageMonth;
     }
 

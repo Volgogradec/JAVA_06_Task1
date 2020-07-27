@@ -24,10 +24,10 @@ class StatsServiceTest {
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         // Вызываем метод
-        int actual = (int) service.statisticSaleAverageMonth(sale);
+        double actual = (double) service.statisticSaleAverageMonth(sale);
 
         // Задаём контрольное значение
-        long expected = 15;
+        double expected = 15;
         assertEquals(expected, actual);
     }
 
