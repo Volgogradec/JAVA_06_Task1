@@ -16,8 +16,8 @@ public class StatsService {
             sum += purchase;
         }
 
-        long AverageMonth = sum / numberSale;
-        return AverageMonth;
+        long averageMonth = sum / numberSale;
+        return averageMonth;
     }
 
     public long statisticSaleMax(int[] sale) {
