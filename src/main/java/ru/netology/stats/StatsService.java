@@ -23,10 +23,9 @@ public class StatsService {
     public long statisticSaleMax(int[] sale) {
         int saleMax = sale[0];
 
-        // Запускаем сравнение - ищем максимальное значение
-        // Если последующий элемент больше первого, то переменная перезаписывается
+        // Если элемент массив больше saleMax, то переменная перезаписывается
         for (int purchase : sale) {
-            if (saleMax < purchase) {
+            if (purchase > saleMax) {
                 saleMax = purchase;
             }
         }
@@ -37,9 +36,9 @@ public class StatsService {
         int saleMin = sale[0];
 
         // Запускаем сравнение - ищем минимальное значение
-        // Если последующий элемент меньше первого, то переменная перезаписывается
+        // Если элемент массива меньше saleMin, то переменная перезаписывается
         for (int purchase : sale) {
-            if (saleMin > purchase) {
+            if (purchase < saleMin) {
                 saleMin = purchase;
             }
         }
