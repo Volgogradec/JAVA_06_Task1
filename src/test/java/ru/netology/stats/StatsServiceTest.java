@@ -41,7 +41,7 @@ class StatsServiceTest {
         int actual = (int) service.statisticSaleMax(sale);
 
         // Задаём контрольное значение
-        long expected = 20;
+        long expected = 8;
         assertEquals(expected, actual);
     }
 
@@ -55,7 +55,7 @@ class StatsServiceTest {
         int actual = (int) service.statisticSaleMin(sale);
 
         // Задаём контрольное значение
-        long expected = 7;
+        long expected = 9;
         assertEquals(expected, actual);
     }
     @org.junit.jupiter.api.Test

@@ -23,26 +23,23 @@ public class StatsService {
     public long statisticSaleMax(int[] sale) {
         int saleMax = sale[0];
 
-        // Если элемент массив больше saleMax, то переменная перезаписывается
-        for (int purchase : sale) {
-            if (purchase > saleMax) {
-                saleMax = purchase;
+        for (int i = 0; i < sale.length; i++) {
+            if (sale[i] >= sale[saleMax]) {
+                saleMax = i;
             }
         }
-        return saleMax;
+        return saleMax + 1;
     }
 
     public long statisticSaleMin(int[] sale) {
-        int saleMin = sale[0];
+        int saleMin = 0;
 
-        // Запускаем сравнение - ищем минимальное значение
-        // Если элемент массива меньше saleMin, то переменная перезаписывается
-        for (int purchase : sale) {
-            if (purchase < saleMin) {
-                saleMin = purchase;
+        for (int i = 0; i < sale.length; i++) {
+            if (sale[i] <= sale[saleMin]) {
+                saleMin = i;
             }
         }
-        return saleMin;
+        return saleMin + 1;
     }
 
     public int statisticMonthUnderAverage(int[] sale) {
