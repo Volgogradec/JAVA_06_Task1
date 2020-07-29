@@ -11,11 +11,7 @@ public class StatsService {
 
     public double statisticSaleAverageMonth(int[] sale) {
         int numberSale = sale.length;
-        long sum = 0;
-        for (long purchase : sale) {
-            sum += purchase;
-        }
-
+        double sum = statisticSaleSum (sale);
         double averageMonth = sum / numberSale;
         return averageMonth;
     }
